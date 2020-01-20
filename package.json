@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "lodash.merge": "^4.6.2",
+    "vue-server-renderer": "^2.6.11",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
