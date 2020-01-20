@@ -16,9 +16,9 @@ function createRenderer(bundle, options) {
 
 let renderer;
 
-const bundle = require("../dist/vue-ssr-server-bundle.json");
+const serverBundle = require("../dist/vue-ssr-server-bundle.json");
 const clientManifest = require("../dist/vue-ssr-client-manifest.json");
-renderer = createRenderer(bundle, {
+renderer = createRenderer(serverBundle, {
   clientManifest
 });
 
@@ -40,7 +40,9 @@ app.get("*", (req, res) => {
       } else {
         // Render Error Page or Redirect
         res.status(500).end("500 | Internal Server Error");
+        // tslint:disable-next-line: no-console
         console.error(`error during render : ${req.url}`);
+        // tslint:disable-next-line: no-console
         console.error(err);
       }
     } else {

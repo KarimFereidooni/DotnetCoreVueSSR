@@ -25,12 +25,12 @@ module.exports = prerendering.createServerRenderer(params => {
       origin: params.origin
     };
 
-    bundleRenderer.renderToString(context, (err, _html) => {
+    bundleRenderer.renderToString(context, (err, html) => {
       if (err) {
         reject(err.message);
       }
       resolve({
-        html: _html
+        html: html
       });
     });
   });

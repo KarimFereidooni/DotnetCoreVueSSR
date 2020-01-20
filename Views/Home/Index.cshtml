@@ -12,9 +12,18 @@
     <title>vuessr</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@mdi/font@@latest/css/materialdesignicons.min.css">
+    <environment names="Staging,Production">
+      <link rel="stylesheet" href="dist/css/chunk-vendors.css">
+    </environment>
   </head>
   <body>
     <div asp-prerender-module="ClientApp/ssr-scripts/renderOnServer"></div>
-    <script src="dist/main.js"></script>
+    <environment names="Development">
+      <script src="dist/main.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+      <script src="dist/js/main.js"></script>
+      <script src="dist/js/chunk-vendors.js"></script>
+    </environment>
   </body>
 </html>

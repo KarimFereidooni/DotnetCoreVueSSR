@@ -7,6 +7,7 @@ const TARGET_NODE = process.env.WEBPACK_TARGET === "node";
 const target = TARGET_NODE ? "server" : "client";
 
 module.exports = {
+  publicPath: "/dist",
   filenameHashing: false,
   css: {
     extract: process.env.NODE_ENV === "production",
