@@ -6,14 +6,8 @@ process.env.NODE_ENV = "production";
 const serverBundle = require("../../wwwroot/dist/vue-ssr-server-bundle.json");
 const clientManifest = require("../../wwwroot/dist/vue-ssr-client-manifest.json");
 
-const template = require("fs").readFileSync(
-  path.join(__dirname, "./index.template.html"),
-  "utf-8"
-);
-
 const bundleRenderer = createBundleRenderer(serverBundle, {
   runInNewContext: false, // recommended
-  template,
   clientManifest
   //inject: false
 });
@@ -28,8 +22,7 @@ module.exports = prerendering.createServerRenderer(params => {
       data: params.data,
       domainTasks: params.domainTasks,
       location: params.location,
-      origin: params.origin,
-      sampleData: paramas.data.sampleData
+      origin: params.origin
     };
 
     bundleRenderer.renderToString(context, (err, _html) => {
