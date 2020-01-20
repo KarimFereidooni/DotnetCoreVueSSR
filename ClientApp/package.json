@@ -4,8 +4,18 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "npm run build:server -- --silent && npm run build:client -- --no-clean --silent",
+    "build:client": "vue-cli-service build --dest ../wwwroot/dist",
+    "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build --dest ../wwwroot/dist",
+    "buildNode": "npm run build:serverNode -- --silent && npm run build:clientNode -- --no-clean --silent",
+    "build:clientNode": "vue-cli-service build",
+    "build:serverNode": "cross-env WEBPACK_TARGET=node vue-cli-service build",
+    "buildDev": "npm run buildDev:server -- --silent && npm run buildDev:client -- --no-clean --silent",
+    "buildDev:client": "vue-cli-service build --dest ../wwwroot/dist --mode development",
+    "buildDev:server": "cross-env WEBPACK_TARGET=node vue-cli-service build --dest ../wwwroot/dist",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -21,8 +31,9 @@
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
     "typescript": "^3.4.3",
-    "vue-cli-plugin-vuetify": "^2.0.3",
     "vue-template-compiler": "^2.6.10",
-    "vuetify-loader": "^1.3.0"
+    "lodash.merge": "^4.6.2",
+    "vue-server-renderer": "^2.6.11",
+    "webpack-node-externals": "^1.7.2"
   }
 }
