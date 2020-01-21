@@ -22,9 +22,7 @@ renderer = createRenderer(serverBundle, {
   clientManifest
 });
 
-app.use("/js", express.static(path.resolve(__dirname, "../dist/js")));
-app.use("/img", express.static(path.resolve(__dirname, "../dist/img")));
-app.use("/css", express.static(path.resolve(__dirname, "../dist/css")));
+app.use("/dist", express.static(path.resolve(__dirname, "../dist")));
 
 app.get("*", (req, res) => {
   res.setHeader("Content-Type", "text/html");
@@ -47,7 +45,9 @@ app.get("*", (req, res) => {
       }
     } else {
       res.status(context.HTTPStatus || 200);
-      res.send(`<!DOCTYPE html><html lang="en">${html}</html>`);
+      res.send(
+        `<!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="dist/css/chunk-vendors.css"></head><body>${html}<script src="dist/js/main.js"></script><script src="dist/js/chunk-vendors.js"></script></body></html>`
+      );
     }
   });
 });
