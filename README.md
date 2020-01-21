@@ -11,3 +11,9 @@ yarn run buildDev
 dotnet restore
 dotnet run
 ```
+## Run on nodejs
+```
+cd ClientApp
+yarn run buildNode
+node ./ssr-scripts/start.js
+```
