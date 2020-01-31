@@ -1,4 +1,4 @@
-# VueJS 2.6 SSR (Server Side Rendering) with TypeScript on ASP.NET Core 3.1
+# VueJS 2.6 Vue CLI 3 SSR (Server Side Rendering) with TypeScript on ASP.NET Core 3.1
 
 # Features
 
