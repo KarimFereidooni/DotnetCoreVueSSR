@@ -1,12 +1,12 @@
 .DS_Store
-ClientApp/node_modules/
-ClientApp/yarn-debug.log
-ClientApp/npm-debug.log
-ClientApp/dist/
+node_modules/
+yarn-debug.log
+npm-debug.log
+dist/
 
 ## /Properties/launchSettings.json
 
-ClientApp/package-lock.json
+package-lock.json
 appsettings.Development.json
 
 ## Ignore Visual Studio temporary files, build results, and
@@ -31,18 +31,20 @@ x86/
 build/
 bld/
 bin/
+UploadedFiles/
 Bin/
 obj/
 Obj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
+.files/
 /wwwroot/dist/**
 
 # Workaround for https://github.com/aspnet/JavaScriptServices/issues/235
 !/wwwroot/dist/_placeholder.txt
 
-ClientApp/yarn.lock
+/yarn.lock
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

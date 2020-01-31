@@ -24,7 +24,7 @@ module.exports = {
     }
   },
   configureWebpack: () => ({
-    entry: `./src/entry-${target}`,
+    entry: `./ClientApp/entry-${target}`,
     target: TARGET_NODE ? "node" : "web",
     // For bundle renderer source map support
     devtool: TARGET_NODE ? "source-map" : undefined,
@@ -57,5 +57,6 @@ module.exports = {
           optimizeSSR: false
         })
       );
+    config.resolve.alias.set("@", path.join(__dirname, "./ClientApp"));
   }
 };

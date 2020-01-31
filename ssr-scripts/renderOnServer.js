@@ -3,8 +3,8 @@ const { createBundleRenderer } = require("vue-server-renderer");
 process.env.VUE_ENV = "server";
 process.env.NODE_ENV = "production";
 
-const serverBundle = require("../../wwwroot/dist/vue-ssr-server-bundle.json");
-const clientManifest = require("../../wwwroot/dist/vue-ssr-client-manifest.json");
+const serverBundle = require("../wwwroot/dist/vue-ssr-server-bundle.json");
+const clientManifest = require("../wwwroot/dist/vue-ssr-client-manifest.json");
 
 const bundleRenderer = createBundleRenderer(serverBundle, {
   runInNewContext: false, // recommended
