@@ -7,6 +7,10 @@
 - **VueJS 2**
   - Vuex (State Store)
 - **TypeScript**
+- **Vue Cli**
+  - Vue Cli 3
+- **Vuetify**
+  - Vuetify 2
 
 # Prerequisites:
 
