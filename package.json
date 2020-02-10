@@ -1,6 +1,6 @@
 {
   "name": "vuessr",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "description": "ASP.NET Core & VueJS SSR Starter project",
   "author": {
